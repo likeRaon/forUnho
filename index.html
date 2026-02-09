@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Valentine</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas id="confetti"></canvas>
+    <main class="page">
+      <section class="card">
+        <div class="glow"></div>
+        <p class="eyebrow">For Unho</p>
+        <h1>Will you marry me?</h1>
+        <p class="subtitle">The answer is just one! Make today even more special!</p>
+
+        <div class="cta" id="button-area">
+          <button id="yes-btn" class="primary">Yes</button>
+          <button id="no-btn" class="ghost">No</button>
+        </div>
+
+        <div class="player">
+          <audio id="audio" src="Ifidietomorrow.mp3" preload="metadata"></audio>
+          <div class="player-row">
+            <button id="play-btn" class="primary">Play</button>
+            <div class="time">
+              <span id="current-time">0:00</span>
+              <span>/</span>
+              <span id="duration">0:00</span>
+            </div>
+          </div>
+          <canvas id="waveform" class="waveform"></canvas>
+          <input id="progress" type="range" min="0" max="100" value="0" />
+          <div class="player-row">
+            <label class="volume">
+              <span>Volume</span>
+              <input id="volume" type="range" min="0" max="1" step="0.01" value="0.7" />
+            </label>
+            <span id="player-status" class="player-status">준비됨</span>
+          </div>
+          <div class="lyrics">
+            <p class="lyrics-title">Lyrics</p>
+            <div id="lyrics-line" class="lyrics-line">가사 파일을 추가하면 표시됩니다.</div>
+          </div>
+        </div>
+
+        <div id="celebrate" class="celebrate hidden">
+          <h2>Yay! I LOVE YOU TOO 💖</h2>
+          <img src="happy.gif" alt="Happy Valentine" />
+        </div>
+      </section>
+    </main>
+
+    <script id="lyrics-data" type="text/plain">
+[00:00.00]If I die tomorrow, I don't want no more sorrow || 내가 내일 죽는다면 더 이상의 슬픔은 원하지 않아
+[00:06.00]I just wanna spend the night with you, with you || 그저 너와 함께 밤을 보내고 싶어, 너와
+[00:12.00]Hand on my heart, I'll love you through the dark || 가슴에 손을 얹고, 어둠 속에서도 널 사랑할게
+[00:18.00]If that gives you peace of mind (Mind) || 그게 네 마음을 편하게 해준다면
+[00:24.00]Time waits for no-one, so, if our lives get stolen || 시간은 누구도 기다리지 않으니, 우리의 삶이 빼앗긴다 해도
+[00:31.00]At least we've got tonight (Tonight) || 적어도 오늘 밤은 우리 거야
+[00:38.00]Give me your hand to hold like it's forever || 영원인 것처럼 내게 손을 잡아줘
+[00:44.00]Before my body's cold I need to tell ya || 내 몸이 식기 전에 너에게 말해야 해
+[00:50.00]If I die tomorrow, I don't want no more sorrow || 내가 내일 죽는다면 더 이상의 슬픔은 원하지 않아
+[00:56.00]I just wanna spend the night with you || 그저 너와 함께 밤을 보내고 싶어
+[01:02.00]Hey, yeah, yeah, yeah, yeah || 헤이, yeah, yeah, yeah, yeah
+[01:08.00]I would beg, steal, or borrow || 빌고, 훔치고, 빌려서라도
+[01:14.00]Just for one more tomorrow || 단 하루의 내일을 위해서
+[01:20.00]Wanna waste time like only we do || 우리만이 할 수 있는 방식으로 시간을 흘려보내고 싶어
+[01:26.00]Hey, yeah, yeah, yeah, yeah || 헤이, yeah, yeah, yeah, yeah
+[01:32.00]If I die tomorrow, if I die tomorrow || 내가 내일 죽는다면, 내가 내일 죽는다면
+[01:40.00]You'd never tell, we've had our share of hell || 겉으로는 모르겠지만, 우린 지옥 같은 시간을 겪었어
+[01:46.00]But I'd say it's worth the view (View) || 그래도 그 풍경을 볼 가치가 있다고 말하겠어
+[01:52.00]So, let's drink to us 'cause nobody's gonna love || 그러니 우리를 위해 건배하자, 아무도
+[01:59.00]You like how I loved you (You like how I loved you) || 내가 너를 사랑한 방식처럼 너를 사랑하진 못할 거야
+    </script>
+
+    <script src="app.js"></script>
+  </body>
+</html>
